@@ -1,0 +1,142 @@
+/* General Page Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa; /* Lighter grey for a cleaner, more modern background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+#container {
+    text-align: center;
+    background: #ffffff; /* White background for container */
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Controls (Input & Button) */
+#controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#controls input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #e8f4f8; /* Light blue background for inputs */
+}
+
+#controls button {
+    padding: 12px 24px;
+    background-color: #4caf50; /* Green button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#controls button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Tree Container */
+#treeContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Tree Layout */
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Node Styling */
+.node {
+    background-color: #8e44ad; /* Purple nodes for a rich color contrast */
+    color: white;
+    padding: 15px 25px; /* Larger padding */
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.node:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(142, 68, 173, 0.3);
+}
+
+/* Children Layout */
+.children {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Prevents too wide spreading */
+}
+
+/* Child Element */
+.child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Connecting Links */
+.link {
+    position: absolute;
+    width: 3px;
+    background-color: #3498db; /* Blue links for branches */
+    z-index: -1;
+}
+
+.link.left {
+    top: 50%;
+    left: -30px;
+    transform: rotate(-45deg);
+    height: 50px;
+}
+
+.link.right {
+    top: 50%;
+    right: -30px;
+    transform: rotate(45deg);
+    height: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #controls {
+        flex-direction: column;
+        gap: 20px;
+    }
+    #controls input {
+        width: 80%;
+    }
+    #controls button {
+        width: 80%;
+    }
+    #container {
+        padding: 20px;
+    }
+}
